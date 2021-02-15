@@ -2,6 +2,11 @@ package com.iu.s1.lang.weather;
 
 public class WeatherView {
 	
+	public void view(String str) {
+		System.out.println("======================");
+		System.out.println(str);
+		System.out.println("======================");
+	}
 	//메서드명 view
 	//WeatherDTO들을 받아서 출력
 	public void view(WeatherDTO [] ar) {
