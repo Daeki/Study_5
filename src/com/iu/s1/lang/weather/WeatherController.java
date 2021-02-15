@@ -27,7 +27,8 @@ public class WeatherController {
 		while(check) {
 			System.out.println("1. 날씨 초기화");
 			System.out.println("2. 날씨 정보 출력");
-			System.out.println("3. 프로 그램 종료");
+			System.out.println("3. 날씨 정보 검색");
+			System.out.println("4. 프로 그램 종료");
 			int select = sc.nextInt();
 			
 			switch(select) {
@@ -39,6 +40,14 @@ public class WeatherController {
 					weatherView.view(weatherDTOs);
 				}else {
 					weatherView.view("초기화를 먼저 진행 하세요");
+				}
+				break;
+			case 3:
+				WeatherDTO weatherDTO = weatheInfo.searchWeather(weatherDTOs);
+				if(weatherDTO != null) {
+					weatherView.view(weatherDTO);
+				}else {
+					weatherView.view("찾는 정보가 없습니다");
 				}
 				break;
 			default:

@@ -1,5 +1,7 @@
 package com.iu.s1.lang.weather;
 
+import java.util.Scanner;
+
 public class WeatheInfo {
 	
 	private String info;
@@ -38,6 +40,25 @@ public class WeatheInfo {
 //		}
 		
 		return weDtos;
+	}
+	
+	//메서드명 searchWeather
+	//날씨정보들을 매개변수로 받아서
+	//검색하고자하는 도시명 입력
+	//검색된 DTO를 리턴,
+	public WeatherDTO searchWeather(WeatherDTO [] ar) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("검색할 도시명 입력");
+		String name = sc.next();
+		WeatherDTO weatherDTO=null;
+		for(int i=0;i<ar.length;i++) {
+			if(name.equals(ar[i].getCity())) {
+				weatherDTO = ar[i];
+				break;
+			}
+		}
+		
+		return weatherDTO;
 	}
 
 }

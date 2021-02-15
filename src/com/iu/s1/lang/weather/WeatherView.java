@@ -7,6 +7,17 @@ public class WeatherView {
 		System.out.println(str);
 		System.out.println("======================");
 	}
+	
+	//메서드명 view
+	//WeatherDTO 하나를 출력
+	public void view(WeatherDTO weatherDTO) {
+		System.out.println("City\t Gion\t Huminity\t State");
+		System.out.print(weatherDTO.getCity()+"\t ");
+		System.out.print(weatherDTO.getGion()+"\t ");
+		System.out.print(weatherDTO.getHuminity()+"\t\t ");
+		System.out.println(weatherDTO.getState());
+	}
+	
 	//메서드명 view
 	//WeatherDTO들을 받아서 출력
 	public void view(WeatherDTO [] ar) {
