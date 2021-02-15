@@ -20,13 +20,13 @@ public class StringEx5 {
 		System.out.println("파일 명 입력");
 		String name = sc.next();//
 		int index = name.lastIndexOf(".");
-		String result = name.substring(index+1);
+		String result = name.substring(index+1).toUpperCase();
 		System.out.println(result);
 		
 		boolean check=false;//true 이미지, false 다른파일
 		
 		for(int i=0;i<names.length;i++) {
-			if(result.equals(names[i])) {
+			if(result.equals(names[i].toUpperCase())) {
 				check=true;
 				break;
 			}
