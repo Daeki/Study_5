@@ -12,6 +12,12 @@ public class WeatheInfo {
 		this.info = this.info + " 대전 -32 10% 맑음";
 		this.info = this.info + " 제주 45 90% 비";
 		this.info = this.info + " 부산 0 80% 눈";
+		
+		StringBuffer sb = new StringBuffer();
+		sb.append("서울 22 60% 흐림");
+		sb.append(" 대전 -32 10% 맑음");
+		
+		this.info = sb.toString();
 	}
 	
 	

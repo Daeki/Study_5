@@ -10,6 +10,8 @@ public class PhoneBookMain {
 		//4. PhoneBook추가(이름,전화번호,나이, 메모)
 		//5. PhoneBook삭제(이름으로검색)
 		//6. 종료
+		PhoneBookInfo phoneBookInfo = new PhoneBookInfo();
+		phoneBookInfo.info();
 
 	}
 
