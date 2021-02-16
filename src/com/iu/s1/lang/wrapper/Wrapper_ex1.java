@@ -14,8 +14,11 @@ public class Wrapper_ex1 {
 		//char ch = jumin.charAt(0);
 		//System.out.println(ch);
 		char [] ar = jumin.toCharArray();
+		//총합계
 		int total=0;
+		//2-9
 		int count=2;
+		
 		for(int i=0;i<jumin.length()-1;i++) {
 			if(jumin.charAt(i)=='-') { //i==6
 				continue;
@@ -66,6 +69,48 @@ public class Wrapper_ex1 {
 // 4)  만약에 결과가 10 이상이면	다시 10으로 나눈 나머지를 체크용 번호 비교
 //     10 /10 = 1...0(나머지)	
 	
+	
+	public void getAge() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("주민 번호 입력");
+		//String jumin = sc.next();
+		String jumin = "940226-1234567";
+		int year=1900;
+		
+		char y = jumin.charAt(7);
+//		if(y=='3' || y=='4') {
+//			year=2000;
+//		}
+		
+//		if(y>='3') {
+//			year=2000;
+//		}
+		
+		int years = Integer.parseInt(String.valueOf(y));
+		if(years>=3) {
+			year=2000;
+		}
+		
+		year = year + Integer.parseInt(jumin.substring(0, 2));
+		
+		int age = 2021-year;
+		
+		System.out.println("현재 나이 : "+age);
+		
+		int month = Integer.parseInt(jumin.substring(2,4));
+		System.out.println(month);
+		
+		if(month>=3 && month <=5) {
+			System.out.println("계절 : 봄");
+		}else if(month>=6 && month<=8) {
+			System.out.println("계절 : 여름");
+		}else if(month>=9 && month<=11) {
+			System.out.println("계절 : 가을");
+		}else {
+			System.out.println("계절 : 겨울");
+		}
+		
+	}
 	//getAge
 	//주민번호 입력 주민번호입력 001224-4234567
 	//나이를 출력
@@ -76,3 +121,7 @@ public class Wrapper_ex1 {
 	// 12 - 2 : 겨울
 	
 }
+
+
+
+
