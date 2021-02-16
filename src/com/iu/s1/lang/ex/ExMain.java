@@ -25,8 +25,8 @@ public class ExMain {
 		
 		System.out.println(objectArray.ar.length);//0
 		
-		objectArray.add(t1);
-		objectArray.add(t2);
+		int size = objectArray.add(t1);
+		size = objectArray.add(t2);
 		
 		System.out.println(objectArray.ar.length);//2
 		
