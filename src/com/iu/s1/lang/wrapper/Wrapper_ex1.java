@@ -33,7 +33,12 @@ public class Wrapper_ex1 {
 		}
 		
 		System.out.println("Total : "+total);
+		//11로 나눈 나머지
 		total = total%11;
+		
+		//나머지를 11에서 빼기
+		total = 11-total;
+		
 		if(total>=10) {
 			total=total%10; //total=0;
 		}
