@@ -5,7 +5,23 @@ public class MemberDTO {
 	private String id;
 	private String pw;
 	private String name;
+	private int age;
+	private double point;
 	
+	
+	
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public double getPoint() {
+		return point;
+	}
+	public void setPoint(double point) {
+		this.point = point;
+	}
 	public String getId() {
 		return id;
 	}

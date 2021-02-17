@@ -12,7 +12,16 @@ public class MemberView {
 			System.out.println("Id : "+m.getId());
 			System.out.println("Pw : "+m.getPw());
 			System.out.println("Name : "+m.getName());
+			System.out.println("Age : "+m.getAge());
+			System.out.println("Point : "+m.getPoint());
+			System.out.println("--------------------------");
 		}
 	}
 
 }
+
+
+
+
+
+
