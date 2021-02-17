@@ -65,7 +65,27 @@ public class ObjectArray {
 	
 	//remove
 	//리턴 배열의 길이
-	//매개변수로 지우려고 하는 인덱번호 받아서 해당 인덱스번호의 배열 요소 삭제
+	//매개변수로 지우려고 하는 인덱스번호 받아서 해당 인덱스번호의 배열 요소 삭제
+	public int remove(int index) {
+		
+		Object [] newAr = new Object[this.ar.length-1];
+		
+		int idx=0;//newAr 인덱스번호
+		
+		for(int i=0;i<ar.length;i++) { //i -> ar 인덱스번호
+			
+			if(index==i) {
+				continue;
+			}
+			
+			newAr[idx]=ar[i];
+			idx++;
+		}
+		
+		ar = newAr;
+		
+		return ar.length;
+	}
 	
 	
 	
@@ -87,5 +107,8 @@ public class ObjectArray {
 		return ar.length;
 	}
 	
+	//메서드명 get
+	//매개변수로 인덱스 번호
+	//배열에서 해당 인덱스 요소를 리턴
 
 }
