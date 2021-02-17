@@ -112,5 +112,8 @@ public class ObjectArray {
 	//메서드명 get
 	//매개변수로 인덱스 번호
 	//배열에서 해당 인덱스 요소를 리턴
+	public Object get(int index) {
+		return ar[index];
+	}
 
 }
