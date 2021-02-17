@@ -15,6 +15,8 @@ public class Ex1Main {
 		
 		boolean check=true;
 		ArrayList ar = new ArrayList();
+		MemberView mv = new MemberView();
+		MemberInfo mi = new MemberInfo();
 		
 		while(check) {
 			System.out.println("1. 회원정보입력");
@@ -25,23 +27,10 @@ public class Ex1Main {
 			
 			switch(select) {
 			case 1:
-				MemberDTO memberDTO = new MemberDTO();
-				System.out.println("Id 입력");
-				memberDTO.setId(sc.next());
-				System.out.println("Pw 입력");
-				memberDTO.setPw(sc.next());
-				System.out.println("Name 입력");
-				memberDTO.setName(sc.next());
-				ar.add(memberDTO);
+				mi.makeMember(ar);
 				break;
 			case 2:
-				for(int i=0;i<ar.size();i++) {
-					MemberDTO m = (MemberDTO)ar.get(i);
-					System.out.println("Id : "+m.getId());
-					System.out.println("Pw : "+m.getPw());
-					System.out.println("Name : "+m.getName());
-				}
-				
+				mv.view(ar);
 				break;
 			default:
 				check=false;
