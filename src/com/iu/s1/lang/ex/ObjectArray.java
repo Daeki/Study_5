@@ -68,22 +68,24 @@ public class ObjectArray {
 	//매개변수로 지우려고 하는 인덱스번호 받아서 해당 인덱스번호의 배열 요소 삭제
 	public int remove(int index) {
 		
-		Object [] newAr = new Object[this.ar.length-1];
+		if(index>=0 && index<ar.length) {
 		
-		int idx=0;//newAr 인덱스번호
-		
-		for(int i=0;i<ar.length;i++) { //i -> ar 인덱스번호
+			Object [] newAr = new Object[this.ar.length-1];
 			
-			if(index==i) {
-				continue;
+			int idx=0;//newAr 인덱스번호
+			
+			for(int i=0;i<ar.length;i++) { //i -> ar 인덱스번호
+				
+				if(index==i) {
+					continue;
+				}
+				
+				newAr[idx]=ar[i];
+				idx++;
 			}
 			
-			newAr[idx]=ar[i];
-			idx++;
+			ar = newAr;
 		}
-		
-		ar = newAr;
-		
 		return ar.length;
 	}
 	
