@@ -22,6 +22,8 @@ public class MemberController {
 		MemberInfo mi = new MemberInfo();
 		
 		//init 호출
+		//ArrayList ar= mi.init();
+		mi.init(ar);
 		
 		while(check) {
 			System.out.println("1. 회원정보입력");

@@ -9,6 +9,8 @@ public class Ex1Main {
 		MemberController mc = new MemberController();
 		mc.start();
 		
+		
+		
 
 	}
 

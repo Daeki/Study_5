@@ -16,9 +16,32 @@ public class MemberInfo {
 		
 	}
 	
+
+	
 	//
-	public void init() {
-		//sb를 파싱해서 ar에 담기
+	public ArrayList init(ArrayList ars) {
+		//ArrayList ars = new ArrayList();
+		String str = sb.toString();
+		System.out.println(str);
+		str = str.replace("-", ",");
+		System.out.println(str);
+		str = str.replace("+", ",");
+		System.out.println(str);
+		String [] ar = str.split(",");
+		
+		for(int i=0;i<ar.length;i++) {
+			MemberDTO memberDTO = new MemberDTO();
+			memberDTO.setId(ar[i]);
+			memberDTO.setPw(ar[++i]);
+			memberDTO.setName(ar[++i]);
+			memberDTO.setAge(Integer.parseInt(ar[++i].trim()));
+			memberDTO.setPoint(Double.parseDouble(ar[++i].trim()));
+			ars.add(memberDTO);
+			
+		}
+		
+		return ars;
+
 	}
 	
 	//makeMember
