@@ -17,7 +17,7 @@ public class MemberController {
 		//3. 프로그램 종료
 		
 		boolean check=true;
-		ArrayList ar = new ArrayList();
+		ArrayList<MemberDTO> ar = new ArrayList<>();
 		MemberView mv = new MemberView();
 		MemberInfo mi = new MemberInfo();
 		

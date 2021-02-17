@@ -19,7 +19,7 @@ public class MemberInfo {
 
 	
 	//
-	public ArrayList init(ArrayList ars) {
+	public ArrayList init(ArrayList<MemberDTO> ars) {
 		//ArrayList ars = new ArrayList();
 		String str = sb.toString();
 		System.out.println(str);
@@ -46,7 +46,7 @@ public class MemberInfo {
 	
 	//makeMember
 	//member의 정보 입력
-	public void makeMember(ArrayList ar) {
+	public void makeMember(ArrayList<MemberDTO> ar) {
 		
 		MemberDTO memberDTO = new MemberDTO();
 		System.out.println("Id 입력");
