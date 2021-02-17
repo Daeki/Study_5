@@ -17,9 +17,12 @@ public class ArrayList_3 {
 			Worker w = ar.get(i);
 			w.doIt();
 			
+			
 			if(w instanceof WorkerHomplus) {
 				WorkerHomplus wh2 = (WorkerHomplus)w;
 				System.out.println(wh2.toy);
+			}else if(w instanceof WorkerEmart) {
+				WorkerEmart we2 = (WorkerEmart)w;
 			}
 		}
 		
