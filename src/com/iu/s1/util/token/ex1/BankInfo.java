@@ -14,9 +14,43 @@ public class BankInfo {
 		sb = new StringBuffer();
 		sb.append("kb,국민,마이핏,1.2,500,");
 		sb.append("woo,우리,직장인우대,1.4,2000,");
-		sb.append("shin,신한,자유적금,0.8,5000,");
-		sb.append("ki,기업,나라사랑,1.9,4000");
+		sb.append("kb,국민,자유적금,0.8,5000,");
+		sb.append("woo,우리,나라사랑,1.9,4000");
 	}
+	
+	
+	
+	//init3
+	public HashMap<String, ArrayList<BankBookDTO>> init3() {
+		String str = sb.toString();
+		StringTokenizer st = new StringTokenizer(str, ",");
+		
+		ArrayList<BankBookDTO> kb = new ArrayList<>();
+		ArrayList<BankBookDTO> woo = new ArrayList<>();
+		
+		HashMap<String, ArrayList<BankBookDTO>> map = new HashMap<>();
+		
+		while (st.hasMoreTokens()) {
+			BankBookDTO bankBookDTO = new BankBookDTO();
+			String key = st.nextToken();
+			bankBookDTO.setBank(st.nextToken());
+			bankBookDTO.setName(st.nextToken());
+			bankBookDTO.setRate(Double.parseDouble(st.nextToken()));
+			bankBookDTO.setMoney(Integer.parseInt(st.nextToken()));
+			if(key.equals("kb")) {
+				kb.add(bankBookDTO);
+				map.put(key, kb);
+			}else {
+				woo.add(bankBookDTO);
+				map.put(key, woo);
+			}
+		}
+		
+		return map;
+		
+	}
+	
+	
 	
 	//init2 HashMap
 	//파싱 StringTokenizer
