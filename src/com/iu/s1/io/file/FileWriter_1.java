@@ -13,7 +13,8 @@ public class FileWriter_1 {
 		FileWriter fw=null;
 		try {
 			fw = new FileWriter(file, true);
-			fw.write("\n hello5 world5");
+			fw.write("\n hello5 world5 \n");
+			fw.flush();
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
