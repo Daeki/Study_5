@@ -34,18 +34,33 @@ public class Server_1 {
 			is = sc.getInputStream(); //byte
 			ir = new InputStreamReader(is);//char
 			br = new BufferedReader(ir);
-			String str =br.readLine();
-			System.out.println(str);
-			
-			System.out.println("클라이언트로 보낼 메세지 입력");
-			str = scc.next();
 			
 			os = sc.getOutputStream();
 			ow = new OutputStreamWriter(os);
 			bw = new BufferedWriter(ow);
-			bw.write(str+"\r\n");
-			bw.flush();
 			
+			boolean check= true;
+			while(check) {
+				String str =br.readLine();
+				System.out.println(str);
+				
+				if(str.toUpperCase().equals("Q")) {
+					System.out.println("종료");
+					break;
+				}
+				
+				
+				System.out.println("클라이언트로 보낼 메세지 입력");
+				str = scc.next();
+				bw.write(str+"\r\n");
+				bw.flush();
+				
+				if(str.toUpperCase().equals("Q")) {
+					System.out.println("종료");
+					break;
+				}
+				
+			}
 			
 			
 		} catch (IOException e) {

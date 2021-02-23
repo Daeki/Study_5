@@ -32,24 +32,36 @@ public class Client_1 {
 			socket = new Socket("211.238.142.212", 8282);
 			System.out.println("서버와 접속 성공");
 			
-			System.out.println("서버로 보낼 메세지 입력");
-			String str=sc.next();
-			
-			
 			os = socket.getOutputStream();//byte
 			ow = new OutputStreamWriter(os);//char
 			bw = new BufferedWriter(ow);
 			
-			bw.write(str+"\r\n");
-			
-			bw.flush();
-			
 			is = socket.getInputStream();
 			ir = new InputStreamReader(is);
 			br = new BufferedReader(ir);
-			str = br.readLine();
 			
-			System.out.println(str);
+			boolean check = true;
+			
+			while(check) {
+				System.out.println("서버로 보낼 메세지 입력");
+				String str=sc.next();
+				bw.write(str+"\r\n");//q, Q
+				bw.flush();
+				
+				if(str.toUpperCase().equals("Q")) {
+					System.out.println("종료");
+					break;
+				}
+				
+				str = br.readLine();
+				System.out.println(str);
+				
+				if(str.toUpperCase().equals("Q")) {
+					System.out.println("종료");
+					break;
+				}
+				
+			}
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
