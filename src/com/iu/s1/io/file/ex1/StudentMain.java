@@ -9,7 +9,16 @@ public class StudentMain {
 		StudentOutput so = new StudentOutput();
 		
 		//1. init실행
-		List<StudentDTO> ar = si.init();
+		//List<StudentDTO> ar = si.init();
+		
+		//1. init2 실행
+		List<StudentDTO> ar=null;
+		try {
+			ar = si.init2();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		//2. input실행 결과물 DTO를 1의 List에 추가
 		StudentDTO studentDTO = si.input();
 		ar.add(studentDTO);

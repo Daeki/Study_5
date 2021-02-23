@@ -1,5 +1,8 @@
 package com.iu.s1.io.file.ex1;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,6 +19,35 @@ public class StudentInput {
 		sb.append("suji,3,48,87,100");
 		
 	}
+	//init2
+	//파일을 읽어서 파싱해서 나온 DTO들을 List에 담아서 리턴
+	public List<StudentDTO> init2() throws Exception{
+		ArrayList<StudentDTO> ar = new ArrayList<>();
+		File file = new File("c:\\test\\student", "student-09-34-37.txt");
+		FileReader fr = new FileReader(file);
+		BufferedReader br = new BufferedReader(fr);
+		boolean check = true;
+		while(check) {
+			String str = br.readLine();
+			if(str==null) {
+				break;
+			}
+			StringTokenizer st = new StringTokenizer(str, ",");
+			StudentDTO studentDTO = new StudentDTO();
+			studentDTO.setName(st.nextToken());
+			studentDTO.setNum(Integer.parseInt(st.nextToken()));
+			studentDTO.setKor(Integer.parseInt(st.nextToken()));
+			studentDTO.setEng(Integer.parseInt(st.nextToken()));
+			studentDTO.setMath(Integer.parseInt(st.nextToken()));
+			studentDTO.setTotal(Integer.parseInt(st.nextToken()));
+			studentDTO.setAvg(Double.parseDouble(st.nextToken()));
+			ar.add(studentDTO);
+		}
+		
+		
+		return ar;
+	}
+	
 	
 	//init
 	//sb의 데이터를 파싱해서 나온 DTO들을 List에 담아서 리턴
