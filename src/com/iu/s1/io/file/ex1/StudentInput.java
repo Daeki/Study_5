@@ -1,6 +1,9 @@
 package com.iu.s1.io.file.ex1;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class StudentInput {
 	
@@ -16,6 +19,25 @@ public class StudentInput {
 	
 	//init
 	//sb의 데이터를 파싱해서 나온 DTO들을 List에 담아서 리턴
+	public List<StudentDTO> init(){
+		ArrayList<StudentDTO> ar = new ArrayList<>();
+		String str = sb.toString();
+		StringTokenizer st = new StringTokenizer(str, ",");
+		while(st.hasMoreTokens()) {
+			StudentDTO studentDTO = new StudentDTO();
+			studentDTO.setName(st.nextToken());
+			studentDTO.setNum(Integer.parseInt(st.nextToken()));
+			studentDTO.setKor(Integer.parseInt(st.nextToken()));
+			studentDTO.setEng(Integer.parseInt(st.nextToken()));
+			studentDTO.setMath(Integer.parseInt(st.nextToken()));
+			studentDTO.setTotal(studentDTO.getKor()+studentDTO.getEng()+studentDTO.getMath());
+			studentDTO.setAvg(studentDTO.getTotal()/3.0);
+			ar.add(studentDTO);
+		}
+		
+		return ar;
+	}
+	
 	
 	//input 
 	//학생의 이름, 번호, 국어, 영어,수학 입력
